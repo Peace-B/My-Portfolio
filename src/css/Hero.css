@@ -1,0 +1,71 @@
+.herobtn:hover {
+  background-color: white;
+  color: rgb(55, 12, 65);
+}
+
+.animate-pop-in {
+  animation: pop-in 1.5s ease-out forwards;
+}
+
+  #about {
+    height: 140vh;
+    padding-top: 200px;
+  }
+
+  .accordion {
+    --bs-accordion-bg: none !important;
+    --bs-accordion-border-color: none !important;
+    --bs-accordion-active-color: none !important;
+    --bs-accordion-active-bg: none !important;
+  }
+
+  
+.accordion-button {
+  color: #07071b !important;
+  padding: .5rem !important;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+
+.custom-accordion-button {
+  background-color: #007bff !important; /* Example background color */
+  color: white !important; /* Text color */
+  border-color: #007bff !important; /* Border color */
+}
+
+.custom-accordion-button:not(.collapsed) {
+  background-color: #0056b3 !important; /* Color when expanded */
+  border-color: #0056b3 !important; /* Border color when expanded */
+}
+
+.line {
+  border: 1px dotted rgb(218, 174, 218);
+}
+
+  #project {
+    height: 100vh;
+    padding-top: 100px;
+  }
+  #contact {
+    height: 100vh;
+    padding-top: 100px;
+  }
+
+
+
+  @keyframes pop-in {
+    0% { 
+      opacity: 0; 
+      transform: translate(-4rem) scale(.7); 
+      
+    }
+    100% { 
+      opacity: 1;
+      transform: none; 
+     }
+}
+  

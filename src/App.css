@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+html {
+  /* scroll-snap-type: y mandatory; */
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 'Outfit', sans-serif; 
+}
+
+section {
+  scroll-snap-align: center;
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
