@@ -5,8 +5,8 @@ import {motion} from "framer-motion"
 const NavBar = () => {
   return (
     <>
-        <div className="container header sticky-top backdrop-blur text-[#7878a8] shadow-xl">
-        <div className="peace">
+        <div className="header sticky-top backdrop-blur text-[#babae4] shadow-xl">
+        <div className="w-full">
             <a href="#home">
               Dev.Peace
                </a>
