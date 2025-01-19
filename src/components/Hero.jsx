@@ -20,7 +20,7 @@ import DPH from "../assets/Screenshot (20).png"
 
 const Hero = () => {
     const [text] = useTypewriter({
-        words: ['Fullstack Developer', "Virtual Assistant", "Freelancer"],
+        words: ['Frontend Dev', "Backend Dev", "Fullstack Developer"],
         loop: true,
         typeSpeed: 100,
         deleteSpeed: 40,

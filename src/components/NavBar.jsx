@@ -9,6 +9,14 @@ const NavBar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/public/Peace B. CV (2).pdf'; 
+    link.download = 'Peace B. CV (2).pdf'; 
+    link.click();
+  };
+
+
   return (
     <>
       <div className="header sticky-top backdrop-blur text-[#babae4] shadow-xl">
@@ -22,15 +30,13 @@ const NavBar = () => {
             </a>
           </div>
 
-          {/* Mobile menu toggle button (Hide when menu is open) */}
           <button
             className={`lg:hidden text-2xl ${isMobileMenuOpen ? 'hidden' : 'block'}`}
             onClick={toggleMobileMenu}
           >
-            &#9776; {/* Hamburger icon */}
+            &#9776;
           </button>
 
-          {/* Navigation links */}
           <motion.div
             className={`lg:flex gap-10 ${isMobileMenuOpen ? 'flex flex-col gap-0 mt-32 z-40' : 'hidden'} lg:flex-row`}
             initial={{ x: 500 }}
@@ -40,7 +46,7 @@ const NavBar = () => {
             <a href="#about" className="py-2">About</a>
             <a href="#project" className="py-2">Projects</a>
             <a href="#contact" className="py-2">Contact</a>
-            <button className="text-2xl py-2">Resume</button>
+            <button className="text-2xl py-2" onClick={handleDownload}>Resume</button>
           </motion.div>
         </div>
       </div>
