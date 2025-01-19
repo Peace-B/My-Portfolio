@@ -11,8 +11,8 @@ const NavBar = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/public/Peace B. CV (2).pdf'; 
-    link.download = 'Peace B. CV (2).pdf'; 
+    link.href = '/src/resume.pdf.pdf'; 
+    link.download = 'resume.pdf'; 
     link.click();
   };
 
