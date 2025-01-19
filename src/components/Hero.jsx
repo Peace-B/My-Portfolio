@@ -13,7 +13,8 @@ import Multi from "../assets/956c4033-9a55-4215-b148-2d286c365d54.png"
 import Space from "../assets/Screenshot (17).png"
 import Advice from "../assets/Screenshot (16).png"
 import Port from "../assets/Screenshot (18).png"
-import Better from "../assets/Screenshot (19).png"
+import Better from "../assets/Screenshot (15).png"
+import DPH from "../assets/Screenshot (20).png"
 
 
 
@@ -38,6 +39,8 @@ const Hero = () => {
         reset(); 
     };
    
+    const currentYear = new Date().getFullYear();
+
 
   return (
     <div className='' >
@@ -47,14 +50,14 @@ const Hero = () => {
         <div className="home-main container w-full flex flex-col gap-4 md:w-[600px] xl:w-8/12 justify-center" >
          <div className="home-content">
             <h1 className=' animate-pop-in text-3xl font-normal md:text-7xl md:font-medium xl:font-normal xl:text-7xl text-[#babae4]'>EVOGOR, PEACE</h1>
-            <h1 className='animate-pop-in text-3xl font-normal md:text-7xl md:font-medium xl:font-normal xl:text-7xl text-purple-400'>BASSEY</h1>
+            <h1 className='animate-pop-in text-3xl font-normal md:text-7xl md:font-medium xl:font-normal xl:text-7xl text-purple-500'>BASSEY</h1>
            <p className='animate-pop-in'>
             <span style={{fontWeight: "bold", fontWeight: '400', fontSize: "30px"}} className='text-[#babae4]'>{text}</span>
             <span style={{color: 'white'}}><Cursor/></span>
            </p>
           </div>
           <div className="" >
-            <button className='herobtn animate-pop-in w-11/12 xl:w-3/5 py-1 md:py-4  bg-purple-500 rounded text-xl'><a href="#contact">Lets Talk</a></button>
+            <button className='herobtn animate-pop-in w-11/12 xl:w-3/5 py-1 md:py-4  bg-purple-600 rounded text-xl'><a href="#contact">Lets Talk</a></button>
           </div>
          </div>
         </main>
@@ -70,7 +73,7 @@ const Hero = () => {
            <img src={Profile} alt="" className='xl:w-full h-full md:w-full' />
         </div>
      <div className="profileInfo xl:h-8 xl:w-3/5 flex flex-col">
-     <h1 className='about-info pb-4 text-4xl xl:text-3xl font-bold text-[#babae4] md:text-5xl xl:pb-0 '>Hello, I'm Peace Bassey 🙂</h1>
+     <h1 className='about-info mt-8 pb-4 text-4xl xl:text-3xl xl:mt-0 font-bold text-[#babae4] md:text-5xl xl:pb-0 '>Hello, I'm Peace Bassey 🙂</h1>
      <p className='para text-2xl text-[#7878a8] xl:text-1xl md:text-3xl'>I'm a passionate Full Stack Web Developer with a knack for turning complex problems into elegant solutions. I build websites with a focus on responsiveness, accessibility and pleasing aesthetics.</p>
     </div>
          </motion.div>
@@ -150,7 +153,7 @@ as well as the importance of making them visually appealing to users. This is ho
         </section>
 
         <section id='project' className='text-[#babae4]'>
-            <motion.div className="container w-11/12 grid grid-cols-1 xl:grid-cols-3 m-auto gap-8 pt-40"
+            <motion.div className="container w-11/12 grid grid-cols-1 xl:grid-cols-2 m-auto gap-8 pt-40"
             initial={{y: -100}}
             whileInView={{y: [60, 0,]}}
             transition={{delay: 0.4, duration: 0.8}}
@@ -162,7 +165,7 @@ as well as the importance of making them visually appealing to users. This is ho
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>MULTI STEP FORM</h1>
                 <p className='pb-1 text-lg'>Project description</p>
-                  <ul className='w-3/5 pl-5 text-[13px]' style={{listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
+                  <ul className='w-2/4 pl-5 text-[13px]' style={{listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>JAVASCRIPT</li>
@@ -181,13 +184,12 @@ as well as the importance of making them visually appealing to users. This is ho
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>SPACE APP</h1>
                 <p className='pb-1 text-lg'>Project description</p>
-                  <ul className='w-3/5 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex",  justifyContent: "space-between"}}>
-                    <li>HTML</li>
-                    <li>CSS</li>
+                  <ul className='w-2/6 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex",  justifyContent: "space-between"}}>
+                    <li>REACT</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
-                <a href="https://better-house-task.vercel.app/" className='text-md underline'>Visit Site</a>
+                <a href="https://space-tourism-topaz-ten.vercel.app/" className='text-md underline'>Visit Site</a>
                 <a href="https://github.com/Peace-B/Better-House-Task" className='text-md underline'>Source Code</a>
                 </div>
                </div>
@@ -200,9 +202,8 @@ as well as the importance of making them visually appealing to users. This is ho
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>ADVICE GENERATOR</h1>
                 <p className='pb-1 text-lg'>Project description</p>
-                  <ul className='w-3/5 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
-                  <li>HTML</li>
-                    <li>CSS</li>
+                  <ul className='w-2/6 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
+                  <li>REACT</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
@@ -218,9 +219,9 @@ as well as the importance of making them visually appealing to users. This is ho
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>BETTER HOUSE</h1>
                 <p className='pb-1 text-lg'>Project description</p>
-                  <ul className='w-3/5 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
-                  <li>HTML</li>
-                    <li>CSS</li>
+                  <ul className='w-2/4 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
+                    <li>REACT</li>
+                    <li>NODE.JS</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
@@ -236,9 +237,9 @@ as well as the importance of making them visually appealing to users. This is ho
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>PORTFOLIO</h1>
                 <p className='pb-1 text-lg'>Project description</p>
-                  <ul style={{ listStyle: "none", display: "flex", gap: "4px"}}>
-                  <li>HTML</li>
-                    <li>CSS</li>
+                  <ul className='w-2/6 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
+                  <li>REACT</li>
+                    <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
                 <a href="https://tsa-port-folio.vercel.app/" className='text-md underline'>Visit Site</a>
@@ -248,27 +249,29 @@ as well as the importance of making them visually appealing to users. This is ho
               </div>
               <div className="shadow-2xl h-[500px]">
                <div className='h-[350px]'>
-                <img src={Profile} alt="" className='h-full w-full'/>
+                <img src={DPH} alt="" className='h-full w-full'/>
                </div>
                <div className='h-[150px] pl-4'>
-                <h1 className='pt-3 font-bold text-md'>PROJECT TITLE</h1>
-                <p className='pb-1 text-lg'>Project description</p>
-                  <ul style={{ listStyle: "none", display: "flex", gap: "4px"}}>
-                    <li>Technologies/frameworks</li>
+                <h1 className='pt-3 font-bold text-md text-purple-500'>DIGITAL PRESENCE HUB</h1>
+                <p className='pb-1 text-md'>A site that creates online presence for small scale businesses.</p>
+                  <ul className='w-2/4 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
+                    <li>REACT</li>
+                    <li>NODE.JS</li>
+                    <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
-                <a href="/" className='text-md'>Visit Site</a>
-                <a href="/" className='text-md '>Source Code</a>
+                <a href="https://dph-frontend.vercel.app/" className='text-md underline'>Visit Site</a>
+                <a href="https://github.com/braitcode/dph-frontend" className='text-md underline'>Source Code</a>
                 </div>
                </div>
               </div>
             </motion.div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#07071b" fill-opacity="1" d="M0,64L40,58.7C80,53,160,43,240,53.3C320,64,400,96,480,122.7C560,149,640,171,720,176C800,181,880,171,960,144C1040,117,1120,75,1200,74.7C1280,75,1360,117,1400,138.7L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#07071b" fill-opacity="1" d="M0,64L40,58.7C80,53,160,43,240,53.3C320,64,400,96,480,122.7C560,149,640,171,720,176C800,181,880,171,960,144C1040,117,1120,75,1200,74.7C1280,75,1360,117,1400,138.7L1440,160L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg> */}
         </section>
 
         
-        <section id='contact' className='h-screen bg-[#4B4B6E] pt-32'>
-          <div className="flex flex-col gap-4 xl:flex-row xl:w-5/6 xl:m-auto xl:h-5/6">
+        <section id='contact' className=' h-screen bg-[#4B4B6E] pt-32'>
+          <div className="container flex flex-col gap-4 xl:flex-row xl:w-5/6 xl:m-auto xl:h-5/6">
            {/* form section*/}
            <div className='xl:w-3/5 h-full shadow-2xl'>
       <form onSubmit={handleSubmit(onSubmit)} className='shadow-2xl w-11/12 m-auto grid grid-cols-2 gap-8'>
@@ -373,99 +376,31 @@ as well as the importance of making them visually appealing to users. This is ho
           </div>
           </section>
 
-          <footer id='footer'>
-          <div className=" w-full xl:h-[353px] xl:pt-[3rem]">
-      <div className="container lg:w-11/12 m-auto py-4 xl:p-0 md:p-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:flex xl:justify-between gap-12 text-center md:text-left">
-          <div className="xl:w-[250px] flex flex-col items-center md:items-start gap-[23px]">
-            <a href='/'>
-            <div>
-              <div className="flex items-center h-[34px] justify-center md:justify-start ">
-                <p className='text-white font-zenDots text-[25px]'>Dev.Peace</p>
-              </div>
-            </div>
-            </a>
-
-            <div className="flex flex-col gap-4">
-              <p className='text-white text-[18px] font-bold flex justify-center md:justify-normal xl:justify-start gap-4 font-spaceGrotesk'>
-                <img src={CallImg} alt="Phone Icon" className='w-[24px] h-[24px]' />
-                +234 9063948518
-              </p>
-
-              <p className='text-white xl:hidden text-[18px] font-bold flex justify-center md:justify-normal xl:justify-start gap-4 font-spaceGrotesk'>
-                <img src={CallImg} alt="SMS Icon" />
-                peacebizzy32@gmail.com
-              </p>
-
-              <p className='text-white text-[18px] font-bold flex justify-center xl:justify-start gap-4 font-spaceGrotesk'>
-                <img src={location} alt="Location Icon" className='w-[24px] h-[24px]' />
-           37 Alfa Nda Street Ilasa, Lagos, Nigeria.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start gap-[20px]">
-            <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Company</h2>
-            <a href="/about">
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>About</p>
-            </a>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Press</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Blog</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Careers</p>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start gap-[20px]">
-            <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Locations</h2>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Africa</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Asia</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>South America</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Europe</p>
-          </div>
-
-          <div className="flex flex-col items-center md:items-start gap-[20px]">
-            <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Support</h2>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Help Center</p>
-            <a href="/contact">
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk'>Contact Us</p>
-            </a>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Terms of Use</p>
-            <p className='text-white text-[18px] font-medium font-spaceGrotesk cursor-not-allowed hover:text-gray-400'>Privacy</p>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="flex flex-col md:col-span-2 gap-[20px]">
-            <h2 className='text-white text-[24px] font-bold font-spaceGrotesk'>Sign up for Newsletter</h2>
-            <form className='md:w-full w-[90%] relative'>
-              <div className='md:w-full w-[100%] relative'>
-                <input
-                  type="email"
-                  placeholder="Email"
-                  // value={email}
-                  // onChange={(e) => setEmail(e.target.value)} // Bind input to state
-                  className="border p-2 rounded-lg bg-transparent text-white font-spaceGrotesk xl:w-full md:w-full w-[80%] pr-16"
-                  // disabled={isLoading} // Disable button while loading
-                />
-                <button
-                  type="submit"
-                  className="absolute right-0 top-0 h-full px-4 bg-white rounded-r-lg"
-                >
-                 {/* {isLoading ? <img src={Hourglass} alt="" className='w-[24px] h-[24px]' /> : <img src={sendIcon} alt='Send Icon' /> } Text loader */}
-                </button>
-              </div>
-            </form>
-            {/* {error && <p style={{ color: 'red' }}>{error}</p>} */}
-            <div className="flex xl:justify-between justify-evenly md:justify-between">
-              <img src={CallImg} alt="Twitter Icon" />
-              <img src={CallImg} alt="YouTube Icon" />
-              <img src={CallImg} alt="Instagram Icon" />
-              <img src={CallImg} alt="LinkedIn Icon" />
-              <img src={CallImg} alt="Facebook Icon" />
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-          </footer>
+          <footer id="footer" className="flex justify-between items-center py-8">
+          <p className='font-bold text-2xl text-gray-500'>&copy; Peace Bassey {currentYear}.</p>
+      <ul className="flex gap-4 justify-center">
+        <li>
+          <a href="https://github.com/Peace-B" target="_blank" rel="noopener noreferrer">
+            <i className="ri-github-fill" style={{ fontSize: '3rem' }}></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/peace-bassey-dev/" target="_blank" rel="noopener noreferrer">
+            <i className="ri-linkedin-fill" style={{ fontSize: '3rem' }}></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+          <i class="ri-twitter-x-fill" style={{ fontSize: '3rem' }}></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+            <i class="ri-instagram-fill" style={{ fontSize: '3rem' }}></i>
+          </a>
+        </li>
+      </ul>
+    </footer>
     </div>
   )
 }

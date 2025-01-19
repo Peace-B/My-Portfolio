@@ -27,6 +27,63 @@
     border-radius: 4px ;
 }
 
+/* Basic navbar styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .header a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #babae4;
+  }
+  
+  /* Mobile menu button */
+  .header .lg\:hidden {
+    display: none;
+  }
+  
+  @media (max-width: 1024px) {
+    /* Show the mobile menu button on smaller screens */
+    .header .lg\:hidden {
+      display: block;
+      font-size: 2rem;
+    }
+  
+    /* Hide the nav links by default on mobile */
+    .header .lg\:flex {
+      display: none;
+    }
+  
+    .header .flex-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .header .flex-row {
+      flex-direction: row;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    /* Hide the mobile menu on larger screens */
+    .header .lg\:hidden {
+      display: none;
+    }
+  
+    /* Show the nav links in row layout on larger screens */
+    .header .lg\:flex {
+      display: flex;
+      gap: 2rem;
+      flex-direction: row;
+    }
+  }
+  
+
 
   
 
