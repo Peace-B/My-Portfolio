@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../css/NavBar.css';
 import { motion } from 'framer-motion';
+import Resume from "../../public/My Resume (2).pdf"
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -9,12 +10,12 @@ const NavBar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/src/resume.pdf.pdf'; 
-    link.download = 'resume.pdf'; 
-    link.click();
-  };
+  // const handleDownload = () => {
+  //   const link = document.createElement('a');
+  //   link.href = ''; 
+  //   link.download = 'resume.pdf'; 
+  //   link.click();
+  // };
 
 
   return (
@@ -46,7 +47,9 @@ const NavBar = () => {
             <a href="#about" className="py-2">About</a>
             <a href="#project" className="py-2">Projects</a>
             <a href="#contact" className="py-2">Contact</a>
-            <button className="text-2xl py-2" onClick={handleDownload}>Resume</button>
+            <a href={Resume} download="My Resume (2).pdf">
+            <button className="text-2xl py-2">Resume</button>
+            </a>
           </motion.div>
         </div>
       </div>
