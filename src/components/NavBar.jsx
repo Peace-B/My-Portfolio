@@ -10,12 +10,6 @@ const NavBar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // const handleDownload = () => {
-  //   const link = document.createElement('a');
-  //   link.href = ''; 
-  //   link.download = 'resume.pdf'; 
-  //   link.click();
-  // };
 
 
   return (
@@ -31,13 +25,6 @@ const NavBar = () => {
             </a>
           </div>
 
-          <button
-            className={`lg:hidden text-2xl ${isMobileMenuOpen ? 'hidden' : 'block'}`}
-            onClick={toggleMobileMenu}
-          >
-            &#9776;
-          </button>
-
           <motion.div
             className={`lg:flex gap-10 ${isMobileMenuOpen ? 'flex flex-col gap-0 mt-32 z-40' : 'hidden'} lg:flex-row`}
             initial={{ x: 500 }}
@@ -51,6 +38,13 @@ const NavBar = () => {
             <button className="text-2xl py-2">Resume</button>
             </a>
           </motion.div>
+
+          <button
+            className={`lg:hidden text-2xl ${isMobileMenuOpen ? 'hidden' : 'block'}`}
+            onClick={toggleMobileMenu}
+          >
+            &#9776;
+          </button>
         </div>
       </div>
     </>

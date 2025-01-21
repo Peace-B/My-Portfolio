@@ -19,28 +19,54 @@ import DPH from "../assets/Screenshot (20).png"
 
 
 const Hero = () => {
-    const [text] = useTypewriter({
-        words: ['Frontend Dev', "Backend Dev", "Fullstack Developer"],
-        loop: true,
-        typeSpeed: 100,
-        deleteSpeed: 40,
-        delay: 2000
-    });
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false); // Loading state
+  const [statusMessage, setStatusMessage] = useState(""); // Success/Error Message state
+  const [text] = useTypewriter({
+    words: ['Frontend Dev', "Backend Dev", "Fullstack Developer"],
+    loop: true,
+    typeSpeed: 100,
+    deleteSpeed: 40,
+    delay: 2000,
+  });
 
-    const ref = useRef(null);
-    useScroll({
-      target: "",
-      offset: ["0 1", "1.33 1"]
-    })
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const { register, handleSubmit: handleReactSubmit, formState: { errors }, reset } = useForm(); // Renamed handleSubmit to handleReactSubmit
 
-    const onSubmit = (data) => {
-        console.log(data); 
-        reset(); 
-    };
-   
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear(); // Define currentYear
 
+  const onSubmit = async (data) => {
+    setLoading(true); // Start loading state
+    try {
+      const response = await fetch("https://v1.nocodeapi.com/peace_b/google_sheets/qyiPTcLWrVTXhazW?tabId=Sheet1", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify([[data.name, data.email, data.message, new Date().toLocaleString()]]),
+      });
+
+      if (response.ok) {
+        setStatusMessage("Message sent successfully!"); // Success message
+        reset(); // Clear form fields after successful submission
+
+            // Set a timeout to clear the success message after 3 seconds
+      setTimeout(() => {
+        setStatusMessage("");
+      }, 3000);
+
+      } else {
+        setStatusMessage("Something went wrong. Please try again!"); // Error message
+      }
+    } catch (err) {
+      setStatusMessage("Error submitting form. Please try again.");
+    } finally {
+      setLoading(false); // Reset loading state
+    }
+  };
 
   return (
     <div className='' >
@@ -64,11 +90,15 @@ const Hero = () => {
         </section>
 
         <section id='about' className='pt-20 xl:pt-44'>
-        <motion.div className="about-content container w-11/12 gap-8 flex flex-col-reverse md:flex-row xl:h-80 xl:w-9/12 m-auto xl:flex-row xl:gap-20 text-xl"
-         initial={{opacity: 0.2, scale: 0}}
-         whileInView={{opacity: 2, scale: 1}}
-         transition={{duration: 0.5, delay: 0.2, easing: 'easeIn'}} 
-        >
+        <motion.div
+    className="about-content container w-11/12 gap-8 flex flex-col-reverse md:flex-row xl:h-80 xl:w-9/12 m-auto xl:flex-row xl:gap-20 text-xl"
+    initial={{ opacity: 0, scale: 0.8 }}  
+    whileInView={{ opacity: 1, scale: 1}} 
+    transition={{
+      opacity: { duration: 0.5, ease: "easeInOut" },
+      scale: { duration: 0.5, ease: "easeInOut" },
+    }} 
+  >
          <div className="profileImg pb-4 w-full xl:w-2/5 xl:pb-0">
            <img src={Profile} alt="" className='xl:w-full h-full md:w-full' />
         </div>
@@ -77,11 +107,16 @@ const Hero = () => {
      <p className='para text-2xl text-[#7878a8] xl:text-1xl md:text-3xl'>I'm a passionate Full Stack Web Developer with a knack for turning complex problems into elegant solutions. I build websites with a focus on responsiveness, accessibility and pleasing aesthetics.</p>
     </div>
          </motion.div>
-          <motion.div className="container py-2 bf-space-black" style={{ height: "auto", margin: "auto", marginTop: "1rem"}}
-          initial={{opacity: 0.2, scale: 0}}
-          whileInView={{opacity: 2, scale: 1}}
-          transition={{duration: 0.5, delay: 0.2, easing: 'easeIn'}}
-          >
+         <motion.div
+    className="container py-2 bf-space-black"
+    style={{ height: "auto", margin: "auto", marginTop: "1rem" }}
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{
+      opacity: { duration: 0.5, ease: "easeInOut" },
+      scale: { duration: 0.5, ease: "easeInOut" },
+    }}
+  >
          <Accordion className='w-[340px] pb-6 mt-[30px] m-auto xl:w-[1000px] md:w-[700px] md:py-10 xl:py-0 xl:pb-10'>
       <Accordion.Item eventKey="0" style={{ maxWidth: '1000px',}} className='bg-[#4B4B6E] md:py-2 xl:py-0'>
         <Accordion.Header style={{border: "none",}}>HISTORY</Accordion.Header>
@@ -270,133 +305,131 @@ as well as the importance of making them visually appealing to users. This is ho
         </section>
 
         
-        <section id='contact' className=' h-screen bg-[#4B4B6E] pt-32'>
-          <div className="container flex flex-col gap-4 xl:flex-row xl:w-5/6 xl:m-auto xl:h-5/6">
-           {/* form section*/}
-           <div className='xl:w-3/5 h-full shadow-2xl'>
-      <form onSubmit={handleSubmit(onSubmit)} className='shadow-2xl w-11/12 m-auto grid grid-cols-2 gap-8'>
-        <div className="flex flex-col">
-          <label>First Name</label>
-          <input 
-            type="text" 
-            placeholder='first name' 
-            className={`py-2 rounded bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.firstName ? 'border-red-500' : ''}`} 
-            {...register("firstName", { required: "First name is required" })}
-          />
-          {errors.firstName && <span className='text-red-500 text-sm'>{errors.firstName.message}</span>}
-        </div>
-
-        <div className="flex flex-col">
-          <label>Last Name</label>
-          <input 
-            type="text" 
-            placeholder='last name' 
-            className={`py-2 rounded bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.lastName ? 'border-red-500' : ''}`} 
-            {...register("lastName", { required: "Last name is required" })}
-          />
-          {errors.lastName && <span className='text-red-500 text-sm'>{errors.lastName.message}</span>}
-        </div>
-
-        <div className="flex flex-col">
-          <label>Email</label>
-          <input 
-            type="email" 
-            placeholder='email' 
-            className={`py-2 rounded bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.email ? 'border-red-500' : ''}`} 
-            {...register("email", { 
-              required: "Email is required", 
-              pattern: { 
-                value: /^\S+@\S+$/i, 
-                message: "Invalid email address" 
-              } 
-            })}
-          />
-          {errors.email && <span className='text-red-500 text-sm'>{errors.email.message}</span>}
-        </div>
-
-        <div className="flex flex-col">
-          <label>Phone Number</label>
-          <input 
-            type="tel" 
-            placeholder='phone number' 
-            className={`py-2 rounded bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.phone ? 'border-red-500' : ''}`} 
-            {...register("phone", { 
-              required: "Phone number is required", 
-              pattern: { 
-                value: /^[0-9]{10}$/, 
-                message: "Invalid phone number"
-              } 
-            })}
-          />
-          {errors.phone && <span className='text-red-500 text-sm'>{errors.phone.message}</span>}
-        </div>
-
-        <div className="flex w-[354px] flex-col xl:w-[604px]">
-          <label>Message</label>
-          <textarea 
-            placeholder='.....type anything' 
-            rows='5' 
-            className={`rounded-md bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.message ? 'border-red-500' : ''}`} 
-            {...register("message", { required: "Message is required" })}
-          ></textarea>
-          {errors.message && <span className='text-red-500 text-sm'>{errors.message.message}</span>}
-        </div>
-
-        <div className="w-11/12 m-auto flex justify-center pt-2 col-span-2"> {/* Use col-span-2 to span the button across both columns */}
-          <button type="submit" className='border py-2 px-5 rounded'>Submit</button>
-        </div>
-      </form>
-    </div>
-
-            <div className="w-full shadow-2xl flex xl:flex-col xl:w-2/5 gap-2">
-           <div className="xl:w-11/12 m-auto shadow-2xl ">
-           <img src={ContactImg} alt="" className="rounded-2xl hidden md:block"/>
-           </div>
-           <ul className="w-11/12 m-auto flex flex-col gap-4">
-             <li className="shadow-2xl flex items-center gap-3 py-2">
-             <div className="bg-[#0c0c1d] p-2 rounded-2xl">
-              <img src={MsgImg} alt="" />
-             </div>
-              <div className="">
-              <p>Email</p>
-              <p>peacebizzy32@gmail.com</p>
+        <section id='contact' className='h-screen bg-[#4B4B6E] pt-32'>
+        <div className="container flex flex-col gap-4 xl:flex-row xl:w-5/6 xl:m-auto xl:h-5/6">
+          {/* Form Section */}
+          <div className="xl:w-3/5 h-full shadow-2xl">
+            <form onSubmit={handleReactSubmit(onSubmit)} className="shadow-2xl w-11/12 m-auto grid grid-cols-1 gap-4">
+              {/* Name Field */}
+              <div className="flex flex-col w-full">
+                <label>Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  className={`py-1 rounded bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.name ? 'border-red-500' : ''}`}
+                  {...register("name", { required: "Name is required" })}
+                />
+                {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
               </div>
-             </li>
-             <li className="shadow-2xl flex items-center gap-3 py-2">
-             <div className="bg-[#0c0c1d] py-2 px-3 rounded-2xl">
-             <img src={CallImg} alt="" />
-             </div>
-              <div>
-              <p>Phone</p>
-              <p>09063948518</p>
+
+              {/* Email Field */}
+              <div className="flex flex-col w-full">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className={`py-1 rounded bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.email ? 'border-red-500' : ''}`}
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^\S+@\S+$/i,
+                      message: "Invalid email address"
+                    }
+                  })}
+                />
+                {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
               </div>
-             </li>
-           </ul>
-           </div>
+
+              {/* Message Field */}
+              <div className="flex flex-col w-full">
+                <label>Message</label>
+                <textarea
+                  placeholder="Type your message"
+                  rows="4"
+                  name="message"
+                  className={`rounded-md bg-[#4B4B6E] border shadow-xl placeholder:pl-2 ${errors.message ? 'border-red-500' : ''}`}
+                  {...register("message", { required: "Message is required" })}
+                ></textarea>
+                {errors.message && <span className="text-red-500 text-sm">{errors.message.message}</span>}
+              </div>
+
+              {/* Submit Button */}
+              <div className="w-11/12 m-auto flex justify-center pt-2 pb-2">
+              <button type="submit" className="border py-2 px-5 rounded" disabled={loading}>
+               {loading ? (
+              <div className="spinner-border text-white" role="status">
+              <span className="sr-only">Loading...</span>
+             </div>
+             ) : (
+               'Submit'
+             )}
+            </button>
+
+
+              </div>
+            </form>
+
+            {/* Status Message */}
+            {statusMessage && (
+              <div className={`mt-4 p-2 rounded-md ${statusMessage.includes('successfully') ? 'bg-[#07071b]' : 'bg-red-500'}`}>
+                <p className="text-white text-center">{statusMessage}</p>
+              </div>
+            )}
           </div>
-          </section>
+
+    {/* Contact Information Section */}
+    <div className="w-full shadow-2xl flex xl:flex-col xl:w-2/5 gap-2">
+      <div className="xl:w-11/12 m-auto shadow-2xl">
+        <img src={ContactImg} alt="" className="rounded-2xl hidden md:block"/>
+      </div>
+      <ul className="w-11/12 m-auto flex flex-col gap-4">
+        <li className="shadow-2xl flex items-center gap-3 py-2">
+          <div className="bg-[#0c0c1d] p-2 rounded-2xl">
+            <img src={MsgImg} alt="" />
+          </div>
+          <div>
+            <p>Email</p>
+            <p>peacebizzy32@gmail.com</p>
+          </div>
+        </li>
+        <li className="shadow-2xl flex items-center gap-3 py-2">
+          <div className="bg-[#0c0c1d] py-2 px-3 rounded-2xl">
+            <img src={CallImg} alt="" />
+          </div>
+          <div>
+            <p>Phone</p>
+            <p>09063948518</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
           <footer id="footer" className="flex justify-between items-center py-8">
-          <p className='font-bold text-2xl text-gray-500'>&copy; Peace Bassey {currentYear}.</p>
+          <p className='font-medium text-xl xl:font-bold xl:text-2xl text-gray-500'>&copy; Peace Bassey {currentYear}.</p>
       <ul className="flex gap-4 justify-center">
         <li>
           <a href="https://github.com/Peace-B" target="_blank" rel="noopener noreferrer">
-            <i className="ri-github-fill" style={{ fontSize: '3rem' }}></i>
+            <i className="ri-github-fill" style={{ fontSize: '2rem' }}></i>
           </a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/peace-bassey-dev/" target="_blank" rel="noopener noreferrer">
-            <i className="ri-linkedin-fill" style={{ fontSize: '3rem' }}></i>
+            <i className="ri-linkedin-fill" style={{ fontSize: '2rem' }}></i>
           </a>
         </li>
         <li>
           <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
-          <i class="ri-twitter-x-fill" style={{ fontSize: '3rem' }}></i>
+          <i class="ri-twitter-x-fill" style={{ fontSize: '2rem' }}></i>
           </a>
         </li>
         <li>
           <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
-            <i class="ri-instagram-fill" style={{ fontSize: '3rem' }}></i>
+            <i class="ri-instagram-fill" style={{ fontSize: '2rem' }}></i>
           </a>
         </li>
       </ul>
