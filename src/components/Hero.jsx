@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import "../css/Hero.css"
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import {motion, useScroll } from "framer-motion"
-import Profile from "../assets/valeria-strogoteanu-J38L2UU1qlI-unsplash.jpg"
+import Profile from "../assets/IMG_0987.png"
 import Accordion from 'react-bootstrap/Accordion';
 import ContactImg from "../assets/contact-us-4193637_1280.jpg"
 import CallImg from "../assets/phone icon.png"
@@ -15,6 +15,7 @@ import Advice from "../assets/Screenshot (16).png"
 import Port from "../assets/Screenshot (18).png"
 import Better from "../assets/Screenshot (15).png"
 import DPH from "../assets/Screenshot (20).png"
+import { Link } from 'react-scroll';
 
 
 
@@ -100,7 +101,7 @@ const Hero = () => {
     }} 
   >
          <div className="profileImg pb-4 w-full xl:w-2/5 xl:pb-0">
-           <img src={Profile} alt="" className='xl:w-full h-full md:w-full' />
+           <img src={Profile} alt="" className='xl:w-full h-full md:w-full object-cover rounded-md' />
         </div>
      <div className="profileInfo xl:h-8 xl:w-3/5 flex flex-col">
      <h1 className='about-info mt-8 pb-4 text-4xl xl:text-3xl xl:mt-0 font-bold text-[#babae4] md:text-5xl xl:pb-0 '>Hello, I'm Peace Bassey 🙂</h1>
@@ -406,7 +407,7 @@ as well as the importance of making them visually appealing to users. This is ho
       </ul>
     </div>
   </div>
-</section>
+        </section>
 
 
           <footer id="footer" className="flex justify-between items-center py-8">
@@ -433,8 +434,8 @@ as well as the importance of making them visually appealing to users. This is ho
           </a>
         </li>
       </ul>
-    </footer>
-    </div>
+          </footer>
+          </div>
   )
 }
 
