@@ -179,7 +179,6 @@ as well as the importance of making them visually appealing to users. This is ho
               <li>GIT</li>
               <li>VSCODE</li>
               <li>NPM</li>
-              <li>NPM</li>
             </ul>
           </div>
         </Accordion.Body>
@@ -200,7 +199,7 @@ as well as the importance of making them visually appealing to users. This is ho
              </div>
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>MULTI STEP FORM</h1>
-                <p className='pb-1 text-lg'>Project description</p>
+                <p className='pb-1 text-lg'>A monthly/yearly subscription platform</p>
                   <ul className='w-2/4 pl-5 text-[13px]' style={{listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -219,9 +218,10 @@ as well as the importance of making them visually appealing to users. This is ho
                </div>
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>SPACE APP</h1>
-                <p className='pb-1 text-lg'>Project description</p>
+                <p className='pb-1 text-lg'>a replica of the space app project in frontend mentor.</p>
                   <ul className='w-2/6 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex",  justifyContent: "space-between"}}>
                     <li>REACT</li>
+                    <li>CSS</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
@@ -237,9 +237,10 @@ as well as the importance of making them visually appealing to users. This is ho
                </div>
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>ADVICE GENERATOR</h1>
-                <p className='pb-1 text-lg'>Project description</p>
+                <p className='pb-1 text-lg'>A website that generates random advice.</p>
                   <ul className='w-2/6 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
                   <li>REACT</li>
+                  <li>CSS</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
@@ -254,10 +255,11 @@ as well as the importance of making them visually appealing to users. This is ho
                </div>
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>BETTER HOUSE</h1>
-                <p className='pb-1 text-lg'>Project description</p>
+                <p className='pb-1 text-lg'>A property listing platform with authentication.</p>
                   <ul className='w-2/4 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
                     <li>REACT</li>
                     <li>NODE.JS</li>
+                    <li>TAILWIND</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
@@ -272,9 +274,11 @@ as well as the importance of making them visually appealing to users. This is ho
                </div>
                <div className='h-[150px] pl-4'>
                 <h1 className='pt-3 font-bold text-md text-purple-500'>PORTFOLIO</h1>
-                <p className='pb-1 text-lg'>Project description</p>
+                <p className='pb-1 text-lg'>portfolio sample</p>
                   <ul className='w-2/6 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
                   <li>REACT</li>
+                  <li>CSS</li>
+                  <li>TAILWIND</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
@@ -293,6 +297,7 @@ as well as the importance of making them visually appealing to users. This is ho
                   <ul className='w-2/4 pl-5 text-[13px]' style={{ listStyle: "initial", display: "flex", justifyContent: "space-between"}}>
                     <li>REACT</li>
                     <li>NODE.JS</li>
+                    <li>TAILWIND</li>
                     <li>JAVASCRIPT</li>
                   </ul>
                 <div className="flex items-center gap-6 pt-2">
